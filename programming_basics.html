@@ -6,14 +6,32 @@
     <body>
     
     
-    <script>
-        let firstName = "hamza";
-        let lastName = "algorithmi";
-        // ataching two string in programming is called string concatenation
-        let fullName = firstName + " " + lastName;
-        function full_name(firstName,lastName){
-            console.log(firstName + " " + lastName);
-        }
+        <script>
+            let firstName = "hamza";
+            let lastName = "algorithmi";
+            let fullName = firstName + " " + lastName;
+
+            function full_name(firstName,lastName){
+                console.log(firstName + " " + lastName);
+            }
+            
+            function newFunc(param1){
+                
+            }
+            
+            //person object
+            let person = {
+                //properties
+                name: "Hamza",
+                dob: "4/13/2000",
+                
+                //methods
+                age: function() {
+                    let year = parseInt(this.dob.substring(5,9));
+                    console.log(2023 - year);
+                }
+            }
+        
         </script>
     </body>
 </html>
