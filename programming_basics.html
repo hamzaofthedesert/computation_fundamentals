@@ -36,15 +36,16 @@
             // First character: h, Last character: o
             
             function checkStringLength(str){
-                //if str length greater than 1:
-                    //print the first character and the last one
-                    //First character: h, Last character: o
-                //else if str length is 1:
-                    //print just the one character
-                    //First character: h
-                //else:
-                    //print "empty string"
+                if(str.length > 1){
+                    console.log("first character: " + str[0] + ", " + "last character:" + str[str.length-1])
+                }else if(str.length === 1){
+                    console.log("first character:" + str[0])
+                }else{
+                    console.log("No character:" + "")
+                }
+
             }
+            checkStringLength("Hello")
             
             
             
