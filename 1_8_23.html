@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+<head>
+    
+    </head>
+    <body>
+    
+    
+        <script>
+            class Animal {
+                //properties
+                name = "";
+                speed;
+                speech;
+            
+                
+                constructor(name){
+                    this.name = name;
+                }
+                
+                //methods
+                setSpeed(speed) {
+                    this.speed = speed;
+                }
+                
+                setSpeech(speech){
+                    this.speech = speech;
+                }
+                
+                speak(){
+                    console.log(this.speech);
+                }
+            }
+            
+            let cat = new Animal("cat");
+            let dog = new Animal("dog");
+            cat.setSpeed(10);
+            let speed = cat.speed;
+            cat.setSpeech("meow");
+            dog.setSpeech("bark");
+            cat.speak();
+            dog.speak();
+            
+            
+            
+            
+            
+            
+            
+            //create a Human class and give it these properties and methods:
+            //  properties:
+            //      name,
+            //      age,
+            //      height
+            //  constructor that takes in name and age and sets them
+            //  methods:
+            //      setHeight
+            
+            
+            
+            
+            
+            
+            
+            
+        </script>
+    </body>
+</html>
