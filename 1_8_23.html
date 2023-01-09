@@ -9,10 +9,9 @@
         <script>
             class Animal {
                 //properties
-                name = "";
+                name;
                 speed;
                 speech;
-            
                 
                 constructor(name){
                     this.name = name;
@@ -56,8 +55,44 @@
             //  methods:
             //      setHeight
             
+            class Human {
+                //properties
+                name;
+                age;
+                height;
+                
+                constructor(name,age){
+                    this.name = name;
+                    this.age = age;
+                }
+                
+                //methods
+                setHeight(height){
+                    this.height = height;
+                }
+            }
+            
+            let hadi = new Human("Hadi", 11);
+            hadi.setHeight("6,2");
+            let ishaq = new Human("Ishaq", 72);
+            ishaq.setHeight("2,1");
+            let musk = new Human("Elon", 72);
+            musk.setHeight("4,0");
+            console.log(hadi.name, hadi.height);
             
             
+            // create a function that takes 2 human objects and
+            // prints which human is older and by how much
+            // 
+            // Input:
+            // First human age 16. Second human age 12
+            // Output:
+            // First human is 4 years older
+            //
+            // Input:
+            // First human age 12. Second human age 20
+            // Output:
+            // Second human is 8 years older
             
             
             
