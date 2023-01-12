@@ -55,6 +55,8 @@
             //  methods:
             //      setHeight
             
+            
+            
             class Human {
                 //properties
                 name;
@@ -85,16 +87,30 @@
             // prints which human is older and by how much
             // 
             // Input:
-            // First human age 16. Second human age 12
+            // First human name Ishaq age 16. Second human name Hadi age 12
             // Output:
-            // First human is 4 years older
+            // Ishaq is 4 years older
             //
             // Input:
-            // First human age 12. Second human age 20
+            // First human name Ishaq age 12. Second human name Hadi age 20
             // Output:
-            // Second human is 8 years older
+            // Hadi is 8 years older
             
+            function whichHumanIsOlder(hum1, hum2){
+                if(hum1.age > hum2.age){
+                   console.log(hum1.name + " is " + (hum1.age - hum2.age) + " years older.");
+                } else {
+                    console.log(hum2.name + " is " + (hum2.age - hum1.age) + " years older.");
+                }
+            }
             
+            let humanExample1 = new Human("Example", 16);
+            let humanExample2 = new Human("John Doe", 12);
+            let humanExample3 = new Human("Johnathon", 30);
+            
+            whichHumanIsOlder(humanExample1, humanExample2);
+            whichHumanIsOlder(humanExample2, humanExample1);
+            whichHumanIsOlder(humanExample1, humanExample3);
             
             
             
