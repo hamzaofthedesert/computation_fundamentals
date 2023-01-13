@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+<head>
+</head>
+    
+<body>
+    <h1>Shop</h1>
+    
+    <div>
+        <label for="productName">Product Name:</label><br>
+        <input type="text" id="productName"><br>
+        <label for="quantity">Quantity:</label><br>
+        <input type="text" id="quantity"><br>
+        <button onclick="submitProduct()">Submit</button><br>
+    </div>
+    
+    <h2>Shopping List</h2>
+    
+    <ul id="shopping-list">
+        
+    </ul>
+    
+    
+    
+    
+    
+    
+    <script>
+        function submitProduct(){
+            let productName = document.getElementById("productName").value;
+            let quantity = document.getElementById("quantity").value;
+            
+            let li = document.createElement("li");
+            let text = document.createTextNode(productName + " " + quantity);
+            li.appendChild(text);
+            document.getElementById("shopping-list").appendChild(li);
+            
+            
+            
+//            <ul id="shopping-list">
+//              <li><text>pname quantity<text></li>
+//              <li><text>pname quantity<text></li>
+//              <li><text>pname quantity<text></li>
+//            </ul>
+            
+            
+        }
+        
+        
+        
+    </script>
+    
+</body>
+    
+</html>
