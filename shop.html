@@ -1,24 +1,34 @@
 <!Doctype html>
 <html>
 <head>
+    <link rel="stylesheet" href="shop.css">
 </head>
     
 <body>
     <h1>Shop</h1>
-    
-    <div>
-        <label for="productName">Product Name:</label><br>
-        <input type="text" id="productName"><br>
-        <label for="quantity">Quantity:</label><br>
-        <input type="text" id="quantity"><br>
-        <button onclick="submitProduct()">Submit</button><br>
+    <div class="shopping-cart-container">
+        <div class="user-input">
+            <label for="productName">Product Name:</label><br>
+            <input type="text" id="productName"><br>
+            <label for="quantity">Quantity:</label><br>
+            <input type="text" id="quantity"><br>
+            <button onclick="submitProduct()">Submit</button><br>
+        </div>
+        
+        <div class="shopping-cart">
+            <h3>Shopping List</h3>
+
+            <ul id="shopping-list">
+                
+            </ul>
+        </div>
     </div>
     
-    <h2>Shopping List</h2>
+
     
-    <ul id="shopping-list">
-        
-    </ul>
+    <div class="div-1">Div #1</div>
+    <div class="div-2">Div #2</div>
+    <div class="div-1">Div #3</div>
     
     
     
@@ -38,9 +48,11 @@
             
             
 //            <ul id="shopping-list">
-//              <li><text>pname quantity<text></li>
-//              <li><text>pname quantity<text></li>
-//              <li><text>pname quantity<text></li>
+//               <li><text>productName quantity</text></li>
+//               <li><text>productName quantity</text></li>
+//               <li><text>productName quantity</text></li>
+//               <li><text>productName quantity</text></li>
+//               <li><text>productName quantity</text></li>
 //            </ul>
             
             
