@@ -1,0 +1,29 @@
+.div-1 {
+    color: red;
+}
+
+.div-2 {
+    color: aqua;
+}
+
+#productName {
+    color: green;
+}
+
+h1 {
+    color: purple;
+}
+
+.shopping-cart-container {
+    display: flex;
+}
+
+.user-input {
+    width: 200px; 
+    height: 200px; 
+    flex: 1;
+}
+
+.shopping-cart {
+    flex: 1;
+}
