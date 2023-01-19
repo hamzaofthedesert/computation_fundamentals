@@ -1,9 +1,11 @@
 .div-1 {
     color: red;
+    border-style: solid;
 }
 
 .div-2 {
     color: aqua;
+    border-style: dotted;
 }
 
 #productName {
@@ -26,4 +28,8 @@ h1 {
 
 .shopping-cart {
     flex: 1;
+}
+
+.web-contents {
+    display: none;
 }
