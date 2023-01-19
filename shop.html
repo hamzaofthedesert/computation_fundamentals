@@ -3,38 +3,49 @@
 <head>
     <link rel="stylesheet" href="shop.css">
 </head>
-    
-<body>
-    <h1>Shop</h1>
-    <div class="shopping-cart-container">
-        <div class="user-input">
-            <label for="productName">Product Name:</label><br>
-            <input type="text" id="productName"><br>
-            <label for="quantity">Quantity:</label><br>
-            <input type="text" id="quantity"><br>
-            <button onclick="submitProduct()">Submit</button><br>
+    <body>
+        <h1 id="welcome"></h1>
+        
+        <div id="input-container">
+            <label for="user-name">User Name:</label><br>
+            <input type="text" id="user-name"><br>
+            <button onclick="showContents()">Submit</button><br>
+        </div>
+         
+        
+        <div class="web-contents">
+            <h1>Shop</h1>
+            <div class="shopping-cart-container" style="display: none">
+                <div class="user-input">
+                    <label for="productName">Product Name:</label><br>
+                    <input type="text" id="productName"><br>
+                    <label for="quantity">Quantity:</label><br>
+                    <input type="text" id="quantity"><br>
+                    <button onclick="submitProduct()">Submit</button><br>
+            
+                </div>
+     
+       
+                <div class="shopping-cart">
+                    <h2>Shopping List</h2>
+
+                    <ul id="shopping-list">
+
+                    </ul>
+<!--                unordered list-->
+<!--                list item-->
+                </div>
+            </div>
         </div>
         
-        <div class="shopping-cart">
-            <h3>Shopping List</h3>
-
-            <ul id="shopping-list">
-                
-            </ul>
-        </div>
-    </div>
-    
-
-    
-    <div class="div-1">Div #1</div>
-    <div class="div-2">Div #2</div>
-    <div class="div-1">Div #3</div>
-    
-    
-    
-    
-    
-    
+        
+<!--
+        <div class="div-1">Div #1</div>
+        <div class="div-2">Div #2</div>
+        <div class="div-1">Div #3</div>
+-->
+     
+        
     <script>
         function submitProduct(){
             let productName = document.getElementById("productName").value;
@@ -45,23 +56,46 @@
             li.appendChild(text);
             document.getElementById("shopping-list").appendChild(li);
             
-            
-            
+//            alert(productName + " " + quantity);
 //            <ul id="shopping-list">
-//               <li><text>productName quantity</text></li>
-//               <li><text>productName quantity</text></li>
-//               <li><text>productName quantity</text></li>
-//               <li><text>productName quantity</text></li>
-//               <li><text>productName quantity</text></li>
-//            </ul>
-            
-            
-        }
+//              <li><text>pname quantity<text></li>
+//              <li><text>pname quantity<text></li>
+//              <li><text>pname quantity<text></li>
+//</ul>
+            }
+        
+            function showContents(){
+                //accepts user input and welcomes them
+                let userNameInput = document.getElementById("user-name").value;
+                let welcomeheader = document.getElementById("welcome");
+                
+               welcomeheader.innerHTML = "Welcome " + userNameInput;
+                
+                //show web contents
+                let elementList = document.getElementsByClassName("web-contents");
+                let contents = elementList[0];
+                
+                contents.style.display = "block";
+                
+                 //hide user input box
+                let userInputBox = document.getElementById("input-container");
+                userInputBox.style.display = "none";
+                
+                
+            }
         
         
-        
-    </script>
+        </script>
+    </body>
+
     
-</body>
     
-</html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
