@@ -1,72 +1,93 @@
 <!Doctype html>
 <html>
 <head>
+    <link rel="stylesheet" href="shop.css">
+</head>
     
-    </head>
-    <body>
+<body>
+    
+    <h1 id="welcome"></h1>
+    
+    <div id="input-container">
+        <label for="user-name">Username:</label><br>
+        <input type="text" id="user-name"><br>
+        <button onclick="showContents()">Submit</button><br>
+    </div>
     
     
-        <script>
-            let firstName = "hamza";
-            let lastName = "algorithmi";
-            let fullName = firstName + " " + lastName;
+    
+    
+    <div class="web-contents" style="display: none">
+        <h2>Shop</h2>
+        <div class="shopping-cart-container">
+            <div class="user-input">
+                <label for="productName">Product Name:</label><br>
+                <input type="text" id="productName"><br>
+                <label for="quantity">Quantity:</label><br>
+                <input type="text" id="quantity"><br>
+                <button onclick="submitProduct()">Submit</button><br>
+            </div>
 
-            function full_name(firstName,lastName){
-                console.log(firstName + " " + lastName);
-            }
-            
-            // this function takes a string parameter and prints the first
-            // character of the string.
-            function newFunc(str){
-                console.log(str[0]);
-            }
-            
-            
-            if(2>8){
-                //do something
-            } else if(6<1){
-                //do something
-            } else{
-                //do something
-            }
-            
-            
-            // str = "hello"
-            // Output:
-            // First character: h, Last character: o
-            
-            function checkStringLength(str){
-                if(str.length > 1){
-                    console.log("first character: " + str[0] + ", " + "last character:" + str[str.length-1])
-                }else if(str.length === 1){
-                    console.log("first character:" + str[0])
-                }else{
-                    console.log("No character:" + "")
-                }
+            <div class="shopping-cart">
+                <h3>Shopping List</h3>
 
-            }
-            checkStringLength("Hello")
+                <ul id="shopping-list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <script>
+        function submitProduct(){
+            let productName = document.getElementById("productName").value;
+            let quantity = document.getElementById("quantity").value;
+            
+            let li = document.createElement("li");
+            let text = document.createTextNode(productName + " " + quantity);
+            li.appendChild(text);
+            document.getElementById("shopping-list").appendChild(li);
             
             
             
+//            <ul id="shopping-list">
+//               <li><text>productName quantity</text></li>
+//               <li><text>productName quantity</text></li>
+//               <li><text>productName quantity</text></li>
+//               <li><text>productName quantity</text></li>
+//               <li><text>productName quantity</text></li>
+//            </ul>
             
             
-            
-            
-            
-            //person object
-            let person = {
-                //properties
-                name: "Hamza",
-                dob: "4/13/2000",
-                
-                //methods
-                age: function() {
-                    let year = parseInt(this.dob.substring(5,9));
-                    console.log(2023 - year);
-                }
-            }
+        }
         
-        </script>
-    </body>
+        function showContents(){
+            //accept user input and then welcome them
+            let usernameInput = document.getElementById("user-name").value;
+            let welcomeHeader = document.getElementById("welcome");
+            
+            welcomeHeader.innerHTML = "Welcome: " + usernameInput;
+            
+            //show web contents
+            let elementList = document.getElementsByClassName("web-contents");
+            let contents = elementList[0];
+            
+            contents.style.display = "block";
+            
+            //hide user input box
+            let userInputBox = document.getElementById("input-container");
+            
+            userInputBox.style.display = "none";
+        }
+        
+        
+    </script>
+    
+</body>
+    
 </html>
