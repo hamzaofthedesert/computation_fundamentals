@@ -33,3 +33,7 @@ h1 {
 .web-contents {
     display: none;
 }
+
+.products {
+    flex: 1;
+}
