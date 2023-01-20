@@ -1,0 +1,132 @@
+<!Doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="shop.css">
+</head>
+    
+<body>
+    
+    <h1 id="welcome"></h1>
+    
+    <div id="input-container">
+        <label for="user-name">Username:</label><br>
+        <input type="text" id="user-name"><br>
+        <button onclick="showContents()">Submit</button><br>
+    </div>
+    
+    
+    
+    
+    <div class="web-contents">
+        <h2>Shop</h2>
+        <div class="shopping-cart-container">
+<!--
+            <div class="user-input">
+                <label for="productName">Product Name:</label><br>
+                <input type="text" id="productName"><br>
+                <label for="quantity">Quantity:</label><br>
+                <input type="text" id="quantity"><br>
+                <button onclick="submitProduct()">Submit</button><br>
+            </div>
+-->
+            <div class="products">
+                <ul id="product-list">
+                    
+                </ul>
+            </div>
+            
+            <div class="shopping-cart">
+                <h3>Shopping List</h3>
+
+                <ul id="shopping-list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <script src="Products.js"></script>
+    <script>
+//        function submitProduct(){
+//            let productName = document.getElementById("productName").value;
+//            let quantity = document.getElementById("quantity").value;
+//            
+//            let li = document.createElement("li");
+//            let text = document.createTextNode(productName + " " + quantity);
+//            li.appendChild(text);
+//            document.getElementById("shopping-list").appendChild(li);
+//            
+//            
+//            
+////            <ul id="shopping-list">
+////               <li><text>productName quantity</text></li>
+////               <li><text>productName quantity</text></li>
+////               <li><text>productName quantity</text></li>
+////               <li><text>productName quantity</text></li>
+////               <li><text>productName quantity</text></li>
+////            </ul>
+//            
+//            
+//        }
+        
+        function showContents(){
+            //accept user input and then welcome them
+            let usernameInput = document.getElementById("user-name").value;
+            let welcomeHeader = document.getElementById("welcome");
+            
+            welcomeHeader.innerHTML = "Welcome: " + usernameInput;
+            
+            //show web contents
+            let elementList = document.getElementsByClassName("web-contents");
+            let contents = elementList[0];
+            
+            contents.style.display = "block";
+            
+            //hide user input box
+            let userInputBox = document.getElementById("input-container");
+            
+            userInputBox.style.display = "none";
+        }
+        
+        function showProducts(){
+            let product1 = new Products("Apple", .99);
+            let product2 = new Products("Banana", 1.99);
+            let product3 = new Products("Grape", 1.49);
+            let product4 = new Products("Peach", 2.35);
+            let product5 = new Products("Mango", 2.99);
+
+            let productList = [product1, product2, product3, product4, product5];
+            
+            //create <li> elements for each product and show it under the <ul>
+            //element.
+            let ul = document.getElementById("product-list");
+            
+            for(let i = 0; i < productList.length; i= i+1){
+                ul.innerHTML = ul.innerHTML + "<li>" + productList[i].name + " " + productList[i].price + "</li>";
+            }
+            
+            //<li>Apple</li>
+            //<li>Banana</li>
+            //<li>Grape</li>
+            
+            
+            //i=0 true i+1;
+            //i=1 true i+1;
+            //i=2; 2 < 5; 2+1;
+            //i=3; 3 < 5; 3+1;
+            //i=4; 4 < 5; 4+1;
+            //i=5; 5 < 5;
+            
+        }
+        
+        
+        showProducts();
+    </script>
+    
+</body>
+    
+</html>
