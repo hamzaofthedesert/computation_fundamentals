@@ -37,3 +37,9 @@ h1 {
 .products {
     flex: 1;
 }
+
+.product-item {
+    width: 100px;
+    border-style: solid;
+    cursor: pointer;
+}
