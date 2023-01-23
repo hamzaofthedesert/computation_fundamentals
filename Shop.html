@@ -25,10 +25,14 @@
             
             <div class="shopping-cart">
                 <h3>Shopping List</h3>
-
-                <ul id="shopping-list">
-
-                </ul>
+                
+                
+                <table id="shopping-list" class="list-table">
+                    <tr>
+                        <th class="list-table">Product Name</th>
+                        <th class="list-table">Price</th>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
@@ -36,9 +40,24 @@
     
     
     
+<!--
+    <table style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th style="border: 1px solid black;">Productname</th>
+            <th style="border: 1px solid black;">Price</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black;">Apple</td>
+            <td style="border: 1px solid black;">0.99</td>
+        </tr>
+    </table>
+-->
+    
+    
     
     <script src="Products.js"></script>
     <script>
+        var shoppingList = [];
         
         function showContents(){
             //accept user input and then welcome them
@@ -72,7 +91,7 @@
             //element.
             let ul = document.getElementById("product-list");
             
-            for(let i = 0; i < productList.length; i= i+1){
+            for(let i = 0; i < productList.length; i++){
                 let li = document.createElement('li');
                 li.innerText = productList[i].name + " " + productList[i].price;
                 li.className = "product-item";
@@ -83,11 +102,48 @@
         }
         
         function addToShoppingList(product){
-            let ul = document.getElementById("shopping-list");
+            let table = document.getElementById("shopping-list");
             
-            ul.innerHTML += "<li>" + product.name + " " + product.price + "</li>"
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            td1.innerText = product.name;
+            td1.className = "list-table";
+            td2.innerText = product.price;
+            td2.className = "list-table";
+            
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            
+            if(table.childElementCount > 2){
+                table.removeChild(table.lastChild);
+            }
+            table.appendChild(tr);
+            shoppingList.push(product);
+            updateTotalCost();
         }
         
+        
+        function updateTotalCost(){
+            let totalCost = 0;
+            for(i=0; i<shoppingList.length; i++){
+                totalCost = (parseFloat(totalCost) + shoppingList[i].price).toFixed(2);
+            }
+            
+            let table = document.getElementById("shopping-list");
+            
+            let tr = document.createElement("tr");
+            let th1 = document.createElement("th");
+            let th2 = document.createElement("th");
+            th1.innerText = "Total Cost";
+            th1.className = "list-table";
+            th2.innerText = totalCost;
+            th2.className = "list-table";
+            
+            tr.appendChild(th1);
+            tr.appendChild(th2);
+            table.appendChild(tr);
+        }
         
         showProducts();
     </script>
