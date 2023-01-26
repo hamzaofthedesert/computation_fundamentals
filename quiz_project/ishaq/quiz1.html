@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div id="head">
+       <center>
+           <h1>Quiz</h1>
+        </center> 
+    </div>
+    
+            <div id="age-container">
+                <label for="user-age">You Age:</label><br>
+                <input type="text" id="user-age"><br>
+                <div id="denialInfo">You is too young</div>
+                <button onclick="ageCheck()">Submit</button><br>
+            </div>
+        
+    <div id="web-contents">
+        
+        
+    <h1>ufbsninono</h1>
+    
+    
+    
+    </div>
+    
+    
+    
+<script>
+    function ageCheck(){
+        let userAgeInput = document.getElementById("user-age").value;
+        let everything = document.getElementById("web-contents");
+        let userAgeBox = document.getElementById("age-container");
+        let denial = document.getElementById("denialInfo")
+        
+        if(userAgeInput > 13){
+            everything.style.display = "block";
+            userAgeBox.style.display = "none";
+        }else{
+            denial.style.display = "block";
+        }
+        
+        
+        
+         
+        
+        
+    }
+    
+    
+    
+    </script>
+</body>
+</html>
