@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div id="head">
+       <center>
+           <h1>Quiz</h1>
+        </center> 
+    </div>
+    
+            <div id="age-container">
+                <label for="user-age">You Age:</label><br>
+                <input type="text" id="user-age"><br>
+                <div id="denialInfo">You is too young</div>
+                <button onclick="ageCheck()">Submit</button><br>
+            </div>
+        
+    <div id="web-contents">    
+        
+        <div id="questionText"></div>
+        
+        <div id="flex">
+            <div id="multiple-choices">
+                
+            </div>
+
+            <div id="answerIs">
+                <div id="correctOrNo"></div>
+                <div id="correct-answer"></div>
+                
+            </div>
+        </div>
+        
+    
+    </div>
+    
+    
+<script src="quizQuestions.js"></script>    
+<script src="quizChoices.js"></script>    
+    
+    
+<script>
+   
+    function ageCheck(){
+        let userAgeInput = document.getElementById("user-age").value;
+        let everything = document.getElementById("web-contents");
+        let userAgeBox = document.getElementById("age-container");
+        let denialInfo = document.getElementById("denialInfo")
+        
+        if(userAgeInput > 13){
+            everything.style.display = "block";
+            userAgeBox.style.display = "none";
+            questions();
+        }else{
+            denialInfo.style.display = "block";
+        }
+        
+    }
+    
+    function questions(){
+        let question1 = new Question("What is the most used language in America besides english?","A) Chinese","B) Arabic", "C) Spanish", "D) Korean")
+        
+        let Q1Choice1 = new Choice("A) Chinese",false)
+        let Q1Choice2 = new Choice("B) Arabic",false)
+        let Q1Choice3 = new Choice("C) Spanish",true)
+        let Q1Choice4 = new Choice("D) Korean",false)
+    
+        let question2 = new Question("Around how many people played fortnite last month", "A) 200 million", "B) 350 Million", "C) 300 Million", "D) 250 Million")
+        
+        let Q2Choice1 = new Choice("A) 200 million", false)
+        let Q2Choice2 = new Choice("B) 350 Million", false)
+        let Q2Choice3 = new Choice("C) 300 Million", false)
+        let Q2Choice4 = new Choice("D) 250 Million", true)
+
+        let question3 = new Question("At what age can you legally drive a car in the UK", "A) 18", "B) 16", "C) 17", "D) 15")
+        
+        let Q3Choice1 = new Choice("A) 18", false)
+        let Q3Choice2 = new Choice("B) 16", true)
+        let Q3Choice3 = new Choice("C) 17", false)
+        let Q3Choice4 = new Choice("D) 15", false)
+
+        let question4 = new Question("What is the most sold book in the world", "A) Harry Potter", "B) The Quran", "C) The Bible", "D) Don Quixote")
+
+        let Q4Choice1 = new Choice("A) Harry Potter", false)
+        let Q4Choice2 = new Choice("B) The Quran", false)
+        let Q4Choice3 = new Choice("C) The Bible", true)
+        let Q4Choice4 = new Choice("D) Don Quixote", false)
+        
+        let question5 = new Question("What do you do at a yellow light(Rigged answer)", "A)STOP!", "B)RUN!", "C)SPEED UP", "D)GO!")
+        
+        let Q5Choice1 = new Choice("A)STOP!", false)
+        let Q5Choice2 = new Choice("B)RUN!", false)
+        let Q5Choice3 = new Choice("C)SPEED UP", true)
+        let Q5Choice4 = new Choice("D)GO!", false)
+    
+        
+        let questionText = document.getElementById("questionText")
+       
+            
+    }
+    
+    
+    
+    </script>
+</body>
+</html>

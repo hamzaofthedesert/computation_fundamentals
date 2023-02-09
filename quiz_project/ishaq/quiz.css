@@ -1,0 +1,55 @@
+#head {
+    background-color: aqua;
+}
+
+#center-ageText{
+   
+}
+
+#denialInfo{
+    width: 110px;
+    color: red;
+    display: none;
+    
+}
+
+#web-contents {
+    display: none;
+}
+
+#age-container{
+    width: 100px;
+    margin: auto;
+    display: block;
+}
+#questionText{
+    text-align: center;
+    font-size: 20px;
+}
+
+.choices{
+    cursor: pointer;
+    width: 100px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+#flex{
+    display: flex;
+}
+#multiple-choices{
+    flex: 1;
+    margin-right: 500px;
+}
+
+#answerIs{
+    flex: 1;
+    font-size: 20px;
+}
+#correct{
+    color: green;
+} 
+
+#incorrect{
+    color: red;
+}
