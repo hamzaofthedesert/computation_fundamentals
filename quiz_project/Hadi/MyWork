@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div style="background-color: cadetblue"></div>
+<title>Quiz </title> 
+<div style="background-color: cadetblue;font-size:23" > 	
+	<p style="text-align: center;font-size:60px">Quiz </p>
+	
+</div> 
+ 
+    <div id="input-container">
+     <label for="age">age:</label><br>	
+        <input type="text" id="age"><br>
+        	<button onclick="showContents();text-align: ;text-align: center">Submit</button><br>
+		<label for="name">name:</label><br>
+		        <input type="text" id="name"><br>
+
+		<button onclick="showContents()">Submit</button><br>
+    	</div>
+	<script>
+		function questions(){
+			let question1 = new Question("What is $100 worth in Robux?","A)100,000","B)20,000","C)10,000","D)1,000")
+			
+			let Q1Choice1 = new Choice("A) 100,000",false)
+			let Q1Choice2 = new Choice("A) 20,000",false)
+			let Q1Choice3 = new Choice("A)10,000",false)
+			let Q1Choice4 = new Choice("A)1,000",false)
+			
+			
+			
+		}
+		
+	
+		
+        
+        
+    </script>
+    
+		
+		
+	
+	</body>
+</html>  
